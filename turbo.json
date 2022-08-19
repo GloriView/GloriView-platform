@@ -1,0 +1,93 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "root#build": {
+      "dependsOn": [
+        "^build",
+        "$ANALYTICS_URL",
+        "$BLOG_URL",
+        "$DOCS_URL",
+        "$FURO_URL",
+        "$LANDING_URL",
+        "$SWAP_URL",
+        "$LEGACY_URL"
+      ],
+      "outputs": [".next/**"],
+      "cache": true
+    },
+    "build": {
+      "outputs": [
+        ".next/**",
+        "dist/**",
+        "typechain/**",
+        "artifacts/**",
+        "cache/**"
+      ],
+      "dependsOn": [
+        "^build",
+        "generate"
+      ],
+      "cache": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": [
+        "^build",
+        "generate"
+      ],
+      "cache": false
+    },
+    "generate": {
+      "dependsOn": [
+        "^build",
+        "$REDIS_URL"
+      ],
+      "outputs": [
+        "^build",
+        ".graphclient/**",
+        ".mesh/**",
+        "typechain/**"
+      ],
+      "cache": true
+    },
+    "test": {    
+      "outputs": [
+        "coverage/**"
+      ],
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": true
+    },
+    "lint": {
+      "outputs": [],
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "validate": {
+      "cache": false
+    },
+    "export": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "exports.json"
+      ],
+      "cache": true
+    },
+    "node": {
+      "dependsOn": [
+        "build"
+      ],
+      "outputs": [
+        "deployments/**"
+      ],
+      "cache": true
+    }
+  },
+  "baseBranch": "origin/master"
+}
