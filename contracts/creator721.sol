@@ -23,11 +23,4 @@ contract creator721 is Ownable{
         NFT = INFT(_NFT);
     }
     //Create NFTs
-    function creatNFT(string memory _url, address userAddr) public notContract{
-        ++tokenId;
-        url[tokenId] = _url;
-        userHold[tokenId] = userAddr;
-        NFT.safeMint_(userAddr, tokenId);
-    }
-    
-}
+
