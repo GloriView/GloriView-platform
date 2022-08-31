@@ -9,3 +9,4 @@ const ForwarderType = {
   NO_CONTEXT: 1,
   WITH_CONTEXT: 2,
 }
+contract('Forwarders', () => {
