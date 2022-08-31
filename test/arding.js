@@ -24,3 +24,4 @@ assert.isTrue(await forwarder.isForwarder(), 'should be a forwarder')
 it('can forward', async () => {
  assert.doesNotThrow(async () => await forwarder.forward(EMPTY_BYTES, EMPTY_BYTES))
    })
+  it('cannot forward with ETH payment', async () => {
