@@ -14,3 +14,4 @@ context('IForwarder', () => {
     let forwarder
    beforeEach(async () => {
       forwarder = await ForwarderMock.new()
+  })
