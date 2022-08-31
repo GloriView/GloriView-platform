@@ -12,3 +12,4 @@ const ForwarderType = {
 contract('Forwarders', () => {
 context('IForwarder', () => {
     let forwarder
+   beforeEach(async () => {
