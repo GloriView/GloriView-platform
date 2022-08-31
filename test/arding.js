@@ -21,3 +21,4 @@ assert.isTrue(await forwarder.isForwarder(), 'should be a forwarder')
  it('reports correct forwarder type', async () => {
      assert.equal(await forwarder.forwarderType(), ForwarderType.NO_CONTEXT, 'should report correct forwarding type')
     })
+it('can forward', async () => {
