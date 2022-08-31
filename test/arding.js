@@ -16,3 +16,4 @@ context('IForwarder', () => {
       forwarder = await ForwarderMock.new()
   })
  it('is a forwarder', async () => {
+assert.isTrue(await forwarder.isForwarder(), 'should be a forwarder')
