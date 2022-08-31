@@ -8,3 +8,4 @@ const ForwarderType = {
   NOT_IMPLEMENTED: 0,
   NO_CONTEXT: 1,
   WITH_CONTEXT: 2,
+}
