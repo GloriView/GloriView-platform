@@ -5,3 +5,4 @@ const ForwarderPayableMock = artifacts.require('ForwarderPayableMock')
 const ForwarderWithContextMock = artifacts.require('ForwarderWithContextMock')
 const ForwarderWithContextPayableMock = artifacts.require('ForwarderWithContextPayableMock')
 const ForwarderType = {
+  NOT_IMPLEMENTED: 0,
