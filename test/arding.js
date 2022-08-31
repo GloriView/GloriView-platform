@@ -25,3 +25,4 @@ it('can forward', async () => {
  assert.doesNotThrow(async () => await forwarder.forward(EMPTY_BYTES, EMPTY_BYTES))
    })
   it('cannot forward with ETH payment', async () => {
+ const payableForwarder = await ForwarderWithContextPayableMock.at(forwarder.address)
